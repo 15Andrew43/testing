@@ -1,0 +1,6 @@
+FROM maven:3.8-openjdk-8
+
+COPY . /DostavimVse
+WORKDIR /DostavimVse
+
+CMD ["./run.sh"]

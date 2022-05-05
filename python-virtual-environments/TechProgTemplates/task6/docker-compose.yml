@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  db:
+    ports: 
+      - 3306:3306
+    volumes:
+      - ./scripts:/docker-entrypoint-initdb.d
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_DATABASE=dostavim
+  webapp:
+    ports:
+      - 8080:8080
+    build: DostavimVse
